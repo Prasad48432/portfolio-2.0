@@ -65,7 +65,7 @@ const GetInTouch = () => {
       aria-label="Contact"
       className="mt-12 mb-12 space-y-6 w-full px-4 sm:px-8 md:px-0"
     >
-      <div className="flex w-full flex-col items-center gap-4 md:flex-row">
+      <div className="flex w-full flex-col items-center gap-6 md:flex-row">
         <div className="size-full space-y-4 md:max-w-xs">
           <h2 className="ise text-3xl md:text-4xl">Contact me</h2>
           <p className="text-lg text-muted-foreground">
@@ -87,12 +87,9 @@ const GetInTouch = () => {
 
         <Form {...form}>
           <form
-            className="w-full space-y-3 rounded-md p-3 sm:space-y-4 sm:rounded-none sm:p-0 isa"
+            className="w-full space-y-3 rounded-md sm:space-y-4 sm:rounded-none sm:p-0 isa"
             onSubmit={form.handleSubmit(onSubmit)}
           >
-            <h2 className="block text-center font-serif text-xl sm:hidden">
-              Fill this form
-            </h2>
             <div className="grid gap-3 sm:gap-4 md:grid-cols-2">
               <FormField
                 control={form.control}

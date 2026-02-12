@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { Instrument_Sans, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import RootProviders from "@/providers";
+import { renderSchemaTags } from "@/lib/seo";
+import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
+import config from "@/lib/config";
 
 const isa = Instrument_Sans({
   variable: "--font-isa",
@@ -20,32 +24,44 @@ const ise = Instrument_Serif({
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    metadataBase: new URL("https://prasadreddy03.vercel.app"),
-    title: "Prasad Reddy's Portfolio",
-    description: "Prasad Reddy, I am a fun guy",
+    metadataBase: new URL(`https://${config.domainName}`),
+    title: config.appName,
+    description: config.appDescription,
+    applicationName: config.appName,
+    keywords: [
+      "portfolio",
+      "personal portfolio",
+      "web developer",
+      "software engineer",
+      "front-end developer",
+      "creative",
+      "coder",
+      "programmer",
+      "developer",
+      "portfolio website",
+    ],
     icons: {
       icon: "/favicon.ico",
     },
     openGraph: {
-      title: "Prasad Reddy's Portfolio",
-      description: "Prasad Reddy, I am a fun guy",
-      url: "https://prasadreddy03.vercel.app",
+      title: config.appName,
+      description: config.appDescription,
+      url: `https://${config.domainName}`,
       images: [
         {
-          url: "https://prasadreddy03.vercel.app/og_image.png", // ✅ FULL URL
+          url: `https://${config.domainName}/og_image.png`,
           width: 1200,
           height: 630,
           alt: "Prasad Reddy's Portfolio OpenGraph Image",
         },
       ],
-      siteName: "Prasad Reddy's Portfolio",
+      siteName: config.appName,
     },
     twitter: {
       card: "summary_large_image",
-      title: "Prasad Reddy's Portfolio",
-      description:
-        "Radify Lighting provides premium architectural, decorative and smart lighting solutions for modern homes and commercial spaces.",
-      images: ["https://prasadreddy03.vercel.app/og_image.png"], // ✅ FULL URL
+      title: config.appName,
+      description: config.appDescription,
+      images: [`https://${config.domainName}/og_image.png`],
     },
   };
 }
@@ -66,8 +82,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${isa.variable} ${ise.variable} antialiased ise`}>
+        {renderSchemaTags()}
         <RootProviders> {children}</RootProviders>
+        {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
+      <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
     </html>
   );
 }

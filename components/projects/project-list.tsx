@@ -16,25 +16,6 @@ type Project = {
 const projects = [
   {
     id: 1,
-    title: "Digiresume",
-    description:
-      "Build a dynamic digital portfolio and resume that stay in sync.",
-    imageUrl: "https://i.ibb.co/nsSnKZsW/digiresume.png",
-    liveLink: "https://digiresume.vercel.app/",
-    repoLink: "https://github.com/digiresume-inc/digiresume",
-    toolsUsed: ["NextJS", "Typescript", "Tailwind", "Supabase"],
-  },
-  {
-    id: 2,
-    title: "Linkfolio",
-    description: "your portfolio simple, powerful and lightweight on the web",
-    imageUrl: "https://i.ibb.co/tMZGNxxS/linkfolio.png",
-    liveLink: "https://linkfolio.space/",
-    repoLink: "https://github.com/Prasad48432/linkfolio",
-    toolsUsed: ["NextJS", "Typescript", "Tailwind", "Supabase"],
-  },
-  {
-    id: 3,
     title: "Ezra AI",
     description: "AI Powered Event Matchmaker for Conferences and Meetups",
     imageUrl:
@@ -44,7 +25,17 @@ const projects = [
     toolsUsed: ["NextJS", "Typescript", "Tailwind", "Supabase"],
   },
   {
-    id: 4,
+    id: 2,
+    title: "Digiresume",
+    description:
+      "Build a dynamic digital portfolio and resume that stay in sync.",
+    imageUrl: "https://i.ibb.co/nsSnKZsW/digiresume.png",
+    liveLink: "https://digiresume.vercel.app/",
+    repoLink: "https://github.com/digiresume-inc/digiresume",
+    toolsUsed: ["NextJS", "Typescript", "Tailwind", "Supabase"],
+  },
+  {
+    id: 3,
     title: "Exam Portal",
     description:
       "end-to-end exam portal built on nextjs prisma nextauth postgres/neon",
@@ -59,6 +50,15 @@ const projects = [
       "Neon",
       "NextAuth",
     ],
+  },
+  {
+    id: 4,
+    title: "Linkfolio",
+    description: "your portfolio simple, powerful and lightweight on the web",
+    imageUrl: "https://i.ibb.co/tMZGNxxS/linkfolio.png",
+    liveLink: "https://linkfolio.space/",
+    repoLink: "https://github.com/Prasad48432/linkfolio",
+    toolsUsed: ["NextJS", "Typescript", "Tailwind", "Supabase"],
   },
 ];
 

@@ -10,8 +10,8 @@ const Skills = () => {
     >
       <h2 className="ise text-3xl md:text-4xl">Tools I've mastered</h2>
       <div className="w-full space-y-6 relative">
-        <div className="z-50 absolute top-0 right-0 bg-linear-to-l h-full w-14 from-background via-background/50 to-transparent" />
-        <div className="z-50 absolute top-0 left-0 bg-linear-to-r h-full w-14 from-background via-background/50 to-transparent" />
+        <div className="z-40 absolute top-0 right-0 bg-linear-to-l h-full w-14 from-background via-background/50 to-transparent" />
+        <div className="z-40 absolute top-0 left-0 bg-linear-to-r h-full w-14 from-background via-background/50 to-transparent" />
 
         <Marquee autoFill pauseOnHover speed={20}>
           <SkillsList stacks={FRONTEND_STACKS} />
