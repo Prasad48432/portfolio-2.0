@@ -32,14 +32,17 @@ export default function ViewToggle({
   };
 
   return (
-    <div
+    <motion.div
       ref={ref}
-      className="relative flex bg-muted p-1 rounded-full w-50 lg:w-60 z-11"
+      initial={{ opacity: 0, y: 12, scale: 0.95 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+      className="relative flex p-1 rounded-full w-50 lg:w-60 z-11 bg-muted/80 backdrop-blur shadow-[inset_0_2px_5px_rgba(0,0,0,0.25),inset_0_-2px_3px_rgba(255,255,255,0.06)] border border-white/10"
     >
       <motion.div
         layout
-        className="absolute top-1 bottom-1 w-1/2 rounded-full bg-card"
-        animate={{ x: value === "resume" ? "93%" : "0%" }}
+        className="absolute top-1 bottom-1 w-1/2 rounded-full bg-card shadow-[0_3px_10px_rgba(0,0,0,0.35),inset_0_1px_2px_rgba(255,255,255,0.25)]"
+        animate={{ left: value === "resume" ? "47%" : "3%" }}
         transition={{ type: "spring", stiffness: 400, damping: 30 }}
       />
 
@@ -52,6 +55,6 @@ export default function ViewToggle({
           {item}
         </button>
       ))}
-    </div>
+    </motion.div>
   );
 }

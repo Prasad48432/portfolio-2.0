@@ -15,10 +15,11 @@ import config from "@/lib/config";
 import workExperiences from "../work-exp/work-data";
 import { BACKEND_STACKS, FRONTEND_STACKS, stacksProps } from "@/lib/constants";
 import { projects } from "../projects/project-list";
+import Footer from "../footer";
 
 const merged = {
-  ...BACKEND_STACKS,
   ...FRONTEND_STACKS,
+  ...BACKEND_STACKS,
 };
 
 export const socialsIcons = [
@@ -57,8 +58,8 @@ export default function ResumeView() {
     <div className="max-w-212.5 relative mx-auto scroll-my-12 overflow-auto px-4 py-8 md:px-16 md:py-16 bg-background">
       <section className="mx-auto w-full max-w-2xl space-y-8 bg-background">
         {/* HEADER */}
-        <header className="flex items-start justify-between">
-          <div className="flex-1 space-y-1.5">
+        <header className="flex flex-col-reverse md:flex-row items-center justify-center md:items-start md:justify-between gap-4 md:gap-0">
+          <div className="flex-1 space-y-1.5 items-center justify-center">
             <h1 className="text-lg lg:text-2xl font-bold merriweather text-foreground flex items-center gap-1">
               Mikkili Sai Prasad Reddy
             </h1>
@@ -79,7 +80,7 @@ export default function ResumeView() {
               Hyderabad
             </p>
 
-            <div className="flex gap-1 pt-1">
+            <div className="flex gap-1 pt-1 items-center justify-center md:justify-start">
               {socialsIcons.map((social, i) => (
                 <Link
                   key={i}
@@ -94,7 +95,7 @@ export default function ResumeView() {
               ))}
             </div>
 
-            <section className="flex gap-4 ml-1 mt-4 text-xs text-muted-foreground">
+            <section className="flex gap-4 ml-1 mt-4 text-xs text-muted-foreground items-center justify-center md:justify-start">
               <Link
                 target="_blank"
                 href={`mailto:${config.social.email}`}
@@ -130,7 +131,7 @@ export default function ResumeView() {
               href={
                 "https://drive.google.com/uc?export=download&id=1acvcsSxuieeIEUi6V0LWUgaErpFU_Cmv"
               }
-              className="text-sm text-center px-3 py-1 rounded-md bg-card border text-foreground w-full"
+              className="text-sm text-center px-3 py-1 rounded-md bg-card border text-foreground w-full hidden md:block"
             >
               Download PDF
             </Link>
@@ -208,16 +209,21 @@ export default function ResumeView() {
 
             <div className="flex justify-between">
               <div>
-                <p className="text-xl font-bold text-foreground">
+                <p className="text-lg font-bold text-foreground text-pretty leading-none">
                   B.Tech Electronics and Communication Engineering
                 </p>
                 <p className="text-base font-medium text-primary">
                   Vignana Bharathi Institute of Technology
                 </p>
               </div>
-              <span className="text-sm whitespace-nowrap text-muted-foreground font-medium">
-                Sep 2021 — June 2025
-              </span>
+              <div className="flex flex-col items-center justify-between my-2">
+                <span className="text-sm whitespace-nowrap text-muted-foreground font-medium">
+                  Sep 2021 — June 2025
+                </span>
+                <span className="text-sm whitespace-nowrap text-muted-foreground font-medium jetbrains">
+                  8.05 CGPA
+                </span>
+              </div>
             </div>
           </section>
 
@@ -242,7 +248,7 @@ export default function ResumeView() {
                   key={i}
                   className="border rounded-lg p-3 bg-card text-card-foreground"
                 >
-                  <h3 className="font-semibold text-xl">{p.title}</h3>
+                  <h3 className="font-semibold text-lg">{p.title}</h3>
                   <p className="text-base text-muted-foreground mt-1">
                     {p.description}
                   </p>
@@ -253,7 +259,7 @@ export default function ResumeView() {
                     >
                       Live Preview
                       <ExternalLink className="size-3" />
-                      <span className="absolute left-0 bottom-0 h-px w-0 bg-foreground transition-all duration-300 group-hover:w-full"></span>
+                      <span className="absolute left-0 bottom-0 h-px w-full md:w-0 bg-foreground transition-all duration-300 group-hover:w-full"></span>
                     </Link>
 
                     <Link
@@ -262,13 +268,15 @@ export default function ResumeView() {
                     >
                       Github URL
                       <Github className="size-3" />
-                      <span className="absolute left-0 bottom-0 h-px w-0 bg-foreground transition-all duration-300 group-hover:w-full"></span>
+                      <span className="absolute left-0 bottom-0 h-px w-full md:w-0 bg-foreground transition-all duration-300 group-hover:w-full"></span>
                     </Link>
                   </div>
                 </div>
               ))}
             </div>
           </section>
+
+          <Footer />
         </div>
       </section>
     </div>
@@ -285,7 +293,7 @@ const SkillsList = ({ stacks }: { stacks: stacksProps }) => {
           <li
             role="listitem"
             key={index}
-            className="flex w-max items-center gap-2 rounded-sm border border-border bg-muted/40 px-2.5 py-1 text-xs font-medium text-foreground"
+            className="flex w-max items-center gap-1.5 rounded-sm border border-border bg-muted/40 px-2.5 py-1 text-xs font-medium text-foreground"
           >
             {<Icon className={className} aria-label={stack} />}
             <span className="whitespace-nowrap">{stack}</span>
