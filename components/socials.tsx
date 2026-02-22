@@ -5,6 +5,7 @@ import { FiGithub } from "react-icons/fi";
 import config from "@/lib/config";
 import { cn } from "@/lib/utils";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
+import Link from "next/link";
 
 const socialsIcons = [
   {
@@ -51,7 +52,7 @@ const Socials = () => {
         <li key={social.id}>
           <Tooltip>
             <TooltipTrigger asChild>
-              <a
+              <Link
                 href={social.href}
                 className={cn(
                   "flex size-9 items-center justify-center rounded-md border border-input bg-background ring-offset-background transition-colors hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
@@ -59,10 +60,9 @@ const Socials = () => {
                 )}
                 aria-label={social.label}
                 target="_blank"
-                rel="external"
               >
                 {social.icon}
-              </a>
+              </Link>
             </TooltipTrigger>
             <TooltipContent side="bottom">
               <span>{social.label}</span>

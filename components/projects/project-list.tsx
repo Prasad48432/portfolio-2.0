@@ -13,7 +13,7 @@ type Project = {
   toolsUsed: string[];
 };
 
-const projects = [
+export const projects = [
   {
     id: 1,
     title: "Ezra AI",

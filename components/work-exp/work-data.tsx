@@ -5,6 +5,7 @@ export type TWorkExperience = {
   role: string;
   description: string;
   stacks: string[];
+  duration?: string;
 };
 
 const workExperiences: TWorkExperience[] = [
@@ -24,6 +25,7 @@ const workExperiences: TWorkExperience[] = [
       "TailwindCSS",
       "shadcn",
     ],
+    duration: "Jul 2025 - Present",
   },
   {
     id: crypto.randomUUID(),
@@ -32,6 +34,7 @@ const workExperiences: TWorkExperience[] = [
     role: "Software Engineer (Intern)",
     description: "Worked on redesigning and implementing UI of Dub's web app.",
     stacks: ["React", "Tailwind", "Shadcn", "Motion"],
+    duration: "Dec 2024 - Jul 2025",
   },
   {
     id: crypto.randomUUID(),
@@ -41,6 +44,7 @@ const workExperiences: TWorkExperience[] = [
     description:
       "Built and End-to-End Headless CMS Blog Platform for VBIT students to share their knowledge and experiences. ",
     stacks: ["React", "Hygraph", "Tailwind", "Vercel", "Shadcn", "GraphQL"],
+    duration: "Jan 2024 - Nov 2024",
   },
 ];
 

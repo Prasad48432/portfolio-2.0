@@ -15,7 +15,7 @@ const Hero = () => {
       >
         <Image
           src={"/pr_logo.png"}
-          className="w-18 sm:w-12 md:w-24 md:-ml-4"
+          className="w-18 sm:w-12 md:w-24 md:-ml-4 invert-0 dark:invert"
           height={499}
           width={499}
           alt="PR Logo"
@@ -30,7 +30,7 @@ const Hero = () => {
           alt="Arrow Image"
           height={400}
           width={300}
-          className="absolute top-12 lg:top-14 scale-80 md:scale-100 right-4 lg:-right-10 w-12 -rotate-12"
+          className="absolute top-12 lg:top-14 scale-80 md:scale-100 right-4 lg:-right-10 w-12 -rotate-12 invert-0 dark:invert"
         />
       </motion.div>
 
@@ -158,7 +158,7 @@ const Hero = () => {
               <Image
                 src="/arrow_cursive.png"
                 alt="arrow"
-                className="w-8 -rotate-100 absolute left-62 -top-2 -translate-y-1/2 hidden md:block"
+                className="w-8 -rotate-100 absolute left-62 -top-2 -translate-y-1/2 hidden md:block invert-0 dark:invert"
                 height={200}
                 width={200}
               />
@@ -169,7 +169,7 @@ const Hero = () => {
                 href="mailto:prasadreddymar6@gmail.com"
               >
                 @Lets Talk
-                <span className="block max-w-0 group-hover:max-w-full transition-all duration-300 h-px bg-white"></span>
+                <span className="block max-w-0 group-hover:max-w-full transition-all duration-300 h-px bg-foreground"></span>
               </Link>
             </motion.div>
           </section>
@@ -183,14 +183,14 @@ const Hero = () => {
           className="relative w-fit overflow-hidden rounded-md"
         >
           <Image
-            src="/my_image.png"
+            src="https://i.ibb.co/N2j2JqCm/my-image-11zon.png"
             alt="My Image"
             width={400}
             height={400}
             className="grayscale"
           />
 
-          <div className="absolute inset-0 bg-[url('/noise.png')] pointer-events-none z-50" />
+          <div className="absolute inset-0 bg-[url('/noise.png')] pointer-events-none z-9" />
         </motion.div>
       </div>
     </>

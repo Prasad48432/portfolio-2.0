@@ -61,7 +61,7 @@ export const FRONTEND_STACKS: stacksProps = {
 };
 
 export const BACKEND_STACKS = {
-  postgreSql: { Icon: BiLogoPostgresql, className: "" },
+  PostgreSql: { Icon: BiLogoPostgresql, className: "" },
   "Node.js": { Icon: SiNodedotjs, className: "" },
   Firebase: { Icon: SiFirebase, className: "" },
   Express: { Icon: SiExpress, className: "" },

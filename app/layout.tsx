@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Instrument_Sans, Instrument_Serif } from "next/font/google";
+import {
+  Instrument_Sans,
+  Instrument_Serif,
+  JetBrains_Mono,
+  Merriweather,
+} from "next/font/google";
 import "./globals.css";
 import RootProviders from "@/providers";
 import { renderSchemaTags } from "@/lib/seo";
@@ -20,6 +25,17 @@ const ise = Instrument_Serif({
   subsets: ["latin"],
   fallback: ["system-ui", "Arial"],
   display: "swap",
+});
+
+const jetbrains = JetBrains_Mono({
+  variable: "--font-jetbrains",
+  subsets: ["latin"],
+});
+
+const merriweather = Merriweather({
+  variable: "--font-merriweather",
+  subsets: ["latin"],
+  weight: ["300", "400", "700", "900"],
 });
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -80,8 +96,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${isa.variable} ${ise.variable} antialiased ise`}>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${isa.variable} ${ise.variable} ${jetbrains.variable} ${merriweather.variable} antialiased ise`}
+      >
         {renderSchemaTags()}
         <RootProviders> {children}</RootProviders>
         {process.env.NODE_ENV === "production" && <Analytics />}
