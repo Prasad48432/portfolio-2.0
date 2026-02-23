@@ -55,7 +55,7 @@ const Socials = () => {
               <Link
                 href={social.href}
                 className={cn(
-                  "flex size-9 items-center justify-center rounded-md border border-input bg-background ring-offset-background transition-colors hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                  "shadow-[inset_0_2px_4px_rgba(255,255,255,0.1)] flex size-9 items-center justify-center rounded-md border border-border bg-muted ring-offset-background transition-colors hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                   social.className,
                 )}
                 aria-label={social.label}

@@ -17,11 +17,11 @@ const WorkExperienceItem: React.FC<WorkExperienceItemProps> = ({
   return (
     <li role="listitem" className="relative pl-8">
       {/* Timeline dot */}
-      <div className="absolute left-0 top-1.5 size-3 rounded-full border-2 border-primary bg-foregorund" />
+      <div className="absolute left-0 top-1.5 size-3 rounded-full border-2 border-primary bg-background" />
 
       {/* Timeline line */}
       {!isLast && (
-        <div className="absolute left-1.25 top-5 h-[calc(100%+1.5rem)] w-0.5 bg-foreground/20" />
+        <div className="absolute left-1.25 top-5 h-[calc(100%+0.5rem)] w-0.5 bg-foreground/20" />
       )}
 
       <div className="space-y-2">

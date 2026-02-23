@@ -118,10 +118,10 @@ export default function ResumeView() {
           <div className="flex flex-col items-end gap-4">
             <div className="size-22 lg:size-28 rounded-xl border grayscale">
               <Image
-                src={"/passport.png"}
+                src={"https://iili.io/qKCwEqQ.md.png"}
                 width={88}
                 height={88}
-                className="w-full h-full rounded-xl object-cover"
+                className="w-full h-full rounded-xl object-scale-down"
                 alt="Passport Image"
               />
             </div>
